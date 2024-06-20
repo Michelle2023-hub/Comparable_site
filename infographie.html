@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Services | Comparable</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Inclure Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; background-color: var(--secondary)" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="accueil.html" class="navbar-brand">
+                    <img src="img/logo comparable.png" alt="Comparablesa Logo" style="height: 60px; margin-right: 10px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="accueil.html" class="nav-item nav-link">Accueil</a>
+                        <a href="about.html" class="nav-item nav-link">A propos de nous</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#" class="dropdown-item dropdown-toggle">Ingenierie</a>
+                                <div class="dropdown-submenu">
+                                    <a href="ingénierie.html" class="dropdown-item">Ingénierie</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Infogérance</a>
+                                <div class="dropdown-submenu">
+                                    <a href="admin.html" class="dropdown-item">Administration des serveurs</a>
+                                    <a href="it.html" class="dropdown-item">IT</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Formations</a>
+                                <div class="dropdown-submenu">
+                                    <a href="programmation.html" class="dropdown-item">Programmations</a>
+                                    <a href="analyse.html" class="dropdown-item">Analyse de données</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Infographie et Web design</a>
+                                <div class="dropdown-submenu">
+                                    <a href="web.html" class="dropdown-item">Web design</a>
+                                    <a href="infographie.html" class="dropdown-item">Infographie</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Nous contacter</a>
+                    </div>
+                </div>
+            </nav>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                    const servicesMenu = document.querySelector('.dropdown-menu');
+
+                    dropdownToggles.forEach(toggle => {
+                        toggle.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const submenu = this.nextElementSibling;
+                            if (submenu && submenu.classList.contains('dropdown-submenu')) {
+                                if (submenu.style.display === "block") {
+                                    submenu.style.display = "none";
+                                } else {
+                                    document.querySelectorAll('.dropdown-submenu').forEach(menu => {
+                                        menu.style.display = "none";
+                                    });
+                                    submenu.style.display = "block";
+                                }
+                            }
+                        });
+                    });
+
+                    document.addEventListener('click', function(event) {
+                        const isClickInside = servicesMenu.contains(event.target) || event.target.classList.contains('dropdown-toggle');
+                        if (!isClickInside) {
+                            servicesMenu.style.display = 'none';
+                        }
+                    });
+
+                    const servicesLink = document.querySelector('.nav-link.dropdown-toggle');
+                    servicesLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        if (servicesMenu.style.display === 'block') {
+                            servicesMenu.style.display = 'none';
+                        } else {
+                            servicesMenu.style.display = 'block';
+                        }
+                    });
+                });
+            </script>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated zoomIn">Infographie et Web design</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="accueil.html">Accueil</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Infographie</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- Info Start -->
+        <div class="container">
+
+            <h2><strong>Identité visuelle</strong></h2>
+        
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="lead">
+                        La notoriété de votre entreprise passe d’abord par la reconnaissance de son identité visuelle (logo, couleurs, …). En effet c’est le premier point de contact avec votre clientèle car, en plus d’être la projection physique de votre marque, l’identité visuelle vous rend unique parmi tant d’autres.</br>
+        
+                        Forts de notre expérience dans la conception graphique et le design, nous vous accompagnons dans la consolidation de votre image, ou l’élaboration de votre identité visuelle si vous n’en possédez pas encore. Nous sommes spécialisés dans:
+        
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <a href="contact.html" class="btn btn-lg btn-primary push-top pull-right">Nous Contacter!</a>
+                </div>
+            </div>
+            <hr class="tall" />
+        
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/info1.jpeg">
+                </div>
+                <div class="col-sm-7">
+                    <h2><strong>-L'élaboration de votre charte graphique</strong></h2>
+                    <p class="lead">
+                        Votre identité visuelle vous rend reconnaissable parmi les autres marques, il est nécessaire de bien l’élaborer et surtout de bien établir les règles pour garantir une utilisation optimale des éléments qui la composent. La charte graphique ou « manuel de marque » récapitule de manière exhaustive les éléments de votre identité graphique (logo, couleurs, police et typographie, …) ainsi que les règles et les perspectives concrètes de son application. Ainsi, nous vous accompagnons dans la conception du logo de votre marque, le choix des couleurs et des polices, en adéquation avec votre secteur d’activité et vos valeurs et nous rédigeons votre charte graphique selon les règles de l’art.
+                    </p>
+                    <!-- <p class="tall">
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent scelerisque volutpat turpis, eu hendrerit enim scel.
+                    </p> -->
+                </div>
+            </div>
+        
+            <hr class="tall" />
+        
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2> <strong>-La production de vos supports de communication</strong></h2>
+                    <p class="lead">
+                    Nous sommes également spécialisés dans la conception et la production des supports de communication (flyers, visuels, gadgets publicitaires, …). Nos graphistes mettent en œuvre tout leur savoir-faire pour vous concevoir des supports de communication attrayants. Nous concevons des visuels esthétiques, qui renforcent l'image de votre marque tout en respectant les codes établis dans votre charte graphique.
+                    </p>
+                    <!-- <p class="tall">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent scelerisque volutpat turpis, eu hendrerit enim scel.
+                    </p> -->
+                </div>
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/info2.jpeg">
+                </div>
+            </div>
+            <hr class="tall" />
+            <div class="row push-top">
+                    <div class="col-md-12">
+                        <h2>Nos<strong> Atouts</strong></h2>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="feature-box">
+                                        <div class="feature-box-icon">
+                                            <i class="fa fa-bullhorn"></i>
+                                        </div>
+                                        <div class="feature-box-info">
+                                            <h4 class="shorter">Un logo à votre image </h4>
+                                            <p class="tall">Conception d'un logo qui représente au mieux votre marque.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="feature-box">
+                                        <div class="feature-box-icon">
+                                            <i class="fa fa-tasks"></i>
+                                        </div>
+                                        <div class="feature-box-info">
+                                            <h4 class="shorter">Une charte graphique redigée selon les règles de l'art</h4>
+                                            <p class="tall">un logo, une typographie, les couleurs , les images et les icônes à votre convenance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="feature-box">
+                                        <div class="feature-box-icon">
+                                            <i class="fa fa-tint"></i>
+                                        </div>
+                                        <div class="feature-box-info">
+                                            <h4 class="shorter">Des visuels attrayants</h4>
+                                            <p class="tall">Des flyers, des gadgets publicitaires de qualités pour une bonne et meilleure visibilité.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="row push-top">
+                        <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="fa fa-suitcase"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Infographie 2D & 3D </h4>
+                                                <p class="tall">Donnez une illusion de profondeur et un effet de réalisme à vos visuels</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="fa fa-video-camera"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Motion design</h4>
+                                                <p class="tall">Animez différents éléments en vue d'en faire une vidéo d'animation:<strong> c'est l'art de donner vie aux images</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                        
+                
+                </div>
+                
+                </div>
+                
+                
+                            </div>
+        <!-- Info End -->
+        
+
+<!-- Footer Start -->
+<div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3">
+                <p><i class="fa fa-map-marker-alt me-3"></i>Douala, Akwa, face Hôtel <br>Astoria</p>
+                <p><i class="fa fa-phone-alt me-3"></i>(237) 695 180 534</p>
+                <p><i class="fa fa-envelope me-3"></i>contact@comparablesa.com</p>
+           </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Plan du site</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="accueil.html">Accueil</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="about.html">A propos de nous</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="#">Services</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="portfolio.html">Portfolio</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="blog.html">Blog</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="contact.html">Contact</a></li>
+                </ul>
+                
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Services</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="ingénierie.html">Ingénierie</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="admin.html">Administration des serveurs</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="it.html">IT</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="programmation.html">Programmation</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="analyse.html">Analyse de données</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="web.html">Web design</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="infographie.html">Infographie</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Projet</h5>
+                <div class="row g-2">
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Comparablesa</a>, All Right Reserved. 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+       <!-- Back to Top -->
+       <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

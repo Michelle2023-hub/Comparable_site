@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Accueil | Comparable</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; background-color: var(--secondary)" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="accueil.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/logo comparable.png" alt="Comparablesa Logo" style="height: 60px; margin-right: 10px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="accueil.html" class="nav-item nav-link active">Accueil</a>
+                    <a href="about.html" class="nav-item nav-link">A propos de nous</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="#" class="dropdown-item dropdown-toggle">Ingenierie</a>
+                            <div class="dropdown-submenu">
+                                <a href="ingénierie.html" class="dropdown-item">Ingénierie</a>
+                            </div>
+                            <a href="#" class="dropdown-item dropdown-toggle">Infogérance </a>
+                            <div class="dropdown-submenu">
+                                <a href="admin.html" class="dropdown-item">Administration des serveurs</a>
+                                <a href="it.html" class="dropdown-item">IT</a>
+                            </div>
+                            <a href="#" class="dropdown-item dropdown-toggle">Formations</i></a>
+                            <div class="dropdown-submenu">
+                                <a href="programmation.html" class="dropdown-item">Programmations</a>
+                                <a href="analyse.html" class="dropdown-item">Analyse de données</a>
+                            </div>
+                            <a href="#" class="dropdown-item dropdown-toggle">Infographie et Web design</a>
+                            <div class="dropdown-submenu">
+                                <a href="web.html" class="dropdown-item">Web design</a>
+                                <a href="infographie.html" class="dropdown-item">Infographie</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                    <a href="contact.html" class="nav-item nav-link">Nous contacter</a>
+                </div>
+            </div>
+        </nav>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                
+                dropdownToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        const submenu = this.nextElementSibling;
+                        
+                        // Hide all submenus except the one that was clicked
+                        document.querySelectorAll('.dropdown-submenu').forEach(menu => {
+                            if (menu !== submenu) {
+                                menu.style.display = "none";
+                            }
+                        });
+                        
+                        if (submenu && submenu.classList.contains('dropdown-submenu')) {
+                            if (submenu.style.display === "block") {
+                                submenu.style.display = "none";
+                            } else {
+                                submenu.style.display = "block";
+                            }
+                        }
+                    });
+                });
+                
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = event.target.closest('.navbar-nav');
+                    if (!isClickInside) {
+                        document.querySelectorAll('.dropdown-submenu').forEach(menu => {
+                            menu.style.display = "none";
+                        });
+                        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+                    }
+                });
+    
+                // Toggle dropdown visibility on click for main services link
+                const servicesLink = document.querySelector('.nav-link.dropdown-toggle');
+                if (servicesLink) {
+                    servicesLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        const servicesMenu = this.nextElementSibling;
+                        if (servicesMenu.classList.contains('show')) {
+                            servicesMenu.classList.remove('show');
+                        } else {
+                            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                                menu.classList.remove('show');
+                            });
+                            servicesMenu.classList.add('show');
+                        }
+                    });
+                }
+            });
+        </script>
+
+        <div class="container-xxl py-5 bg-primary hero-header mb-5">
+            <div class="container my-5 py-5 px-lg-5">
+                <div class="row g-5 py-5">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="text-white mb-4 animated zoomIn">Comparable</h1>
+                        <p class="text-white pb-3 animated zoomIn">Le moyen le plus rapide de développer votre entreprise <br>Toute une expertise avérée pour des solutions sécurisées</p>
+                        <a href="portfolio.html" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Visitez notre portfolio</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/accueil.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">A propos de nous</h6>
+                            <h2 class="short word-rotator-title">
+                                Des solutions
+                                <strong class="inverted">
+                                    <span class="word-rotate">
+                                        <span class="word-rotate-items">
+                                            <span class="active">Performantes</span>
+                                            <span>Sécurisées</span>
+                                            <span>Evolutives</span>
+                                        </span>
+                                    </span>
+                                </strong>
+                                pour tous nos clients.
+                            </h2>
+                            
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+    const wordRotate = document.querySelector('.word-rotate');
+    const words = wordRotate.querySelectorAll('.word-rotate-items span');
+    let currentIndex = 0;
+
+    function rotateWords() {
+        const currentWord = words[currentIndex];
+        const nextIndex = (currentIndex + 1) % words.length;
+        const nextWord = words[nextIndex];
+
+        currentWord.classList.remove('active');
+        nextWord.classList.add('active');
+
+        // Adjust the width of the container to fit the next word
+        wordRotate.style.width = nextWord.offsetWidth + 'px';
+
+        currentIndex = nextIndex;
+    }
+
+    // Initial adjustment
+    wordRotate.style.width = words[currentIndex].offsetWidth + 'px';
+
+    // Rotate words every 2 seconds
+    setInterval(rotateWords, 2000);
+});
+</script>   
+                        </div>
+                        <p class="mb-4">Editeur de logiciels, Comparable SARL regroupe en son sein les compétences d’une SSII (société de service en ingénierie informatique) et celles d’un cabinet de formation et de conseil en management.</p>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Staff très professionnel</h6>
+                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Support 24h/24</h6>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <a class="btn btn-primary rounded-pill px-4 me-3" href="about.html">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Contactez nous</h3>
+                        <small class="text-white">Pour plus d'informations sur nos services bien vouloir nous écrire</small>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Nos services</h6>
+                    <h2 class="mt-2">Les solutions que nous vous proposons</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Ingénierie</h5>
+                            <p>Nous proposons des logiciels sur mesure innovants adaptés à vos besoins.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Web (UX & UI) Design</h5>
+                            <p>Expert en web Design, nous donnons du style à vos interfaces graphiques</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Conception site web</h5>
+                            <p>Des sites web modernes, responsives, et dynamiques pour tout type d'entreprises.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Formations</h5>
+                            <p>Apprenez les métiers du numérique avec des formateurs expérimentés.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Infographie</h5>
+                            <p> Conception graphique, logo, charte graphique, faites confiance à Comparable SARL</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Conseil</h5>
+                            <p>Des experts disponibles 24/24 pour vous apporter conseils pour votre projet digital.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Analyse de donnéesl</h5>
+                            <p> Des données plus que des munitions de décisions. Optez pour une analyse plus poussée.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Infogérance</h5>
+                            <p>Votre service IT entre les mains des professionnels c'est cela notre capacité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Nos projets</h6>
+                    <h2 class="mt-2">Nos récents projets</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">Tout</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">Logiciel</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Site web</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Infographie</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet1.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet1.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Santé</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">OXYGEN MEDICAL</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet2.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet2.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Santé</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">PSI PAP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet3.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet3.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Santé</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">DASHBOARD PSI PAP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet4.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet4.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>ERP entreprise</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">EMU</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet5.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet5.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Digital sms</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">NUFI SMS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet6.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet6.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Digital sms</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">DASHBOARD NUFISMS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/projet7.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/projet7.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>ERP</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">MODULE EMU</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl bg-primary testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Fort de son potentiel Humain, <strong>Comparable SARL</strong> a toujours eu une longueur d'avance dans notre processus de collaboration de projet.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/digitwace.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">JEFF Wilfried</h6>
+                                <small>CEO & founder-DigitWace</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Comparable SARL ne manque pas une occasion de nous fournir des inventions juste à partir de quelques idées. </p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/JLCgroup.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">NKAM Landry</h6>
+                                <small>CEO & Founder-JLC Group</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Excellente collaboration, de très bonnes suggestions aussi bien pour notre site internet que pour notre service après vente SAV. </p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/UBM.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">PETTO Florian</h6>
+                                <small>CEO & Founder-UBM Sarl</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Nous avons été satisfait du travail fourni par <strong>Comparable sa</strong>. Son professionalisme et sa créativité ont permis de mener à bien nos projets. Nous vous le recommandons vivement. </p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/GSC.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">YOUGA Calet</h6>
+                                <small>CEO & Founder-GSC</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p><strong>Comparable sa</strong> est très professionnelle, à l'écoute et accessible. Elle apporte en plus de son expertise logicielle, une innovation. Une éventualité d'identité qui fait corps avec l'ame de votre structure. L'énergie que vous souhaitez sera à coup sur représenté</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/LJDgroup.jpg" style="width: 80px; height: 80px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">LEUMASSI Jacques</h6>
+                                <small>CEO & Founder-LJD Group</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                // Initialiser WOW.js
+                new WOW().init();
+    
+                // Initialiser Owl Carousel
+                $('.testimonial-carousel').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    nav: false,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        576: {
+                            items: 2
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 3
+                        }
+                    }
+                });
+            });
+        </script>
+        <!-- Testimonial End -->
+
+        <!-- Footer Start -->
+<div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3">
+                <p><i class="fa fa-map-marker-alt me-3"></i>Douala, Akwa, face Hôtel <br>Astoria</p>
+                <p><i class="fa fa-phone-alt me-3"></i>(237) 695 180 534</p>
+                <p><i class="fa fa-envelope me-3"></i>contact@comparablesa.com</p>
+             </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Plan du site</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="accueil.html">Accueil</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="about.html">A propos de nous</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="#">Services</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="portfolio.html">Portfolio</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="blog.html">Blog</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Services</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="ingénierie.html">Ingénierie</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="admin.html">Administration des serveurs</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="it.html">IT</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="programmation.html">Programmation</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="analyse.html">Analyse de données</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="web.html">Web design</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="infographie.html">Infographie</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Projet</h5>
+                <div class="row g-2">
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Comparablesa</a>, All Right Reserved. 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+         <!-- Back to Top -->
+         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        </div>
+    
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+    
+    </html>

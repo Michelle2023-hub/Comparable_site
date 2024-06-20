@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Services | Comparable</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Inclure Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+     
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem; background-color: var(--secondary)" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="accueil.html" class="navbar-brand">
+                    <img src="img/logo comparable.png" alt="Comparablesa Logo" style="height: 60px; margin-right: 10px;">
+                </a>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="accueil.html" class="nav-item nav-link">Accueil</a>
+                        <a href="about.html" class="nav-item nav-link">A propos de nous</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#" class="dropdown-item dropdown-toggle">Ingenierie</a>
+                                <div class="dropdown-submenu">
+                                    <a href="ingénierie.html" class="dropdown-item">Ingénierie</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Infogérance</a>
+                                <div class="dropdown-submenu">
+                                    <a href="admin.html" class="dropdown-item">Administration des serveurs</a>
+                                    <a href="it.html" class="dropdown-item">IT</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Formations</a>
+                                <div class="dropdown-submenu">
+                                    <a href="programmation.html" class="dropdown-item">Programmations</a>
+                                    <a href="analyse.html" class="dropdown-item">Analyse de données</a>
+                                </div>
+                                <a href="#" class="dropdown-item dropdown-toggle">Infographie et Web design</a>
+                                <div class="dropdown-submenu">
+                                    <a href="web.html" class="dropdown-item">Web design</a>
+                                    <a href="infographie.html" class="dropdown-item">Infographie</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
+                        <a href="blog.html" class="nav-item nav-link ">Blog</a>
+                        <a href="contact.html" class="nav-item nav-link">Nous contacter</a>
+                    </div>
+                </div>
+            </nav>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                    const servicesMenu = document.querySelector('.dropdown-menu');
+
+                    dropdownToggles.forEach(toggle => {
+                        toggle.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const submenu = this.nextElementSibling;
+                            if (submenu && submenu.classList.contains('dropdown-submenu')) {
+                                if (submenu.style.display === "block") {
+                                    submenu.style.display = "none";
+                                } else {
+                                    document.querySelectorAll('.dropdown-submenu').forEach(menu => {
+                                        menu.style.display = "none";
+                                    });
+                                    submenu.style.display = "block";
+                                }
+                            }
+                        });
+                    });
+
+                    document.addEventListener('click', function(event) {
+                        const isClickInside = servicesMenu.contains(event.target) || event.target.classList.contains('dropdown-toggle');
+                        if (!isClickInside) {
+                            servicesMenu.style.display = 'none';
+                        }
+                    });
+
+                    const servicesLink = document.querySelector('.nav-link.dropdown-toggle');
+                    servicesLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        if (servicesMenu.style.display === 'block') {
+                            servicesMenu.style.display = 'none';
+                        } else {
+                            servicesMenu.style.display = 'block';
+                        }
+                    });
+                });
+            </script>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated zoomIn">Ingénierie</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="accueil.html">Accueil</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Ingénierie</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.7);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- Ing Start -->
+        <div class="container">
+
+            <!-- <h2><strong>Ingenierie</strong></h2> -->
+    
+            <div class="row">
+                <div class="col-md-10">
+                    <p class="lead">
+                        L'Ingenierie est une discipline qui consiste en la conception, la fabrication, le developpement et la maintenance de systèmes informatiques; elle désigne également la conception, l'évolution et le maintien en conditions opérationnelles des systèmes informatiques.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <a href="contact.html" class="btn btn-lg btn-primary push-top pull-right">Contactez-nous!</a>
+                </div>
+            </div>
+    
+            <hr class="tall" />
+    
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2> <strong>Conception</strong></h2>
+                    <p class="lead">
+                    La conception de logiciel met en œuvre un ensemble d'activités qui à partir d'une demande d'informatisation d'un processus (demande qui peut aller de la simple question orale jusqu'au cahier des charges complet) permettent la conception, l'écriture et la mise au point d'un logiciel (et donc de programmes informatiques).
+                    </p>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/ingénierie1.jpg">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Nos Methodes<strong> </strong></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-group"></i> -->
+                                    <i class="fa fa-desktop"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">MERISE</h4>
+                                    <p class="tall">MERISE est une méthode de conception, de développement et de réalisation de projets informatiques. Le but de cette méthode est d'arriver à concevoir un système d'information. La méthode MERISE est basée sur la séparation des données et des traitements à effectuer en plusieurs modèles conceptuels et physiques.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-film"></i> -->
+                                    <i class="fa fa-gears"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">UML</h4>
+                                    <p class="tall">Le Langage de Modélisation Unifié, de l'anglais Unified Modeling Language (UML), est un langage de modélisation graphique à base de pictogrammes conçu comme une méthode normalisée de visualisation dans les domaines du développement logiciel et en conception orientée objet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-bars"></i> -->
+                                    <i class="fa fa-shield"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">AXIAL</h4>
+                                    <p class="tall">(analyse et conception de système d'information assistées par logiciels) est une méthode d'analyse, de conception et de gestion de projet initialement utilisée dans le monde IBM.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <hr class="tall" />
+    
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/ingénierie2.jpg">
+                </div>
+                <div class="col-sm-7">
+                    <h2> <strong>Développement</strong></h2>
+                    <p class="lead">
+                        Le développement informatique consiste à concevoir et maintenir le fonctionnement des logiciels informatiques. Cette activité recouvre les étapes d'étude, de conception, de transformation, de mise au point et de maintenance des logiciels.
+                    </p>
+                    <!-- <p class="tall">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent scelerisque volutpat turpis, eu hendrerit enim scel.
+                    </p> -->
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Nos Types<strong> </strong></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-group"></i> -->
+                                    <i class="fa fa-desktop"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">Développement de logiciel</h4>
+                                    <p class="tall">Le développement de logiciel consiste à étudier, concevoir, construire, transformer, mettre au point, maintenir et améliorer des logiciels. En d'autres termes Le terme développement logiciel représente tous les processus impliqués collectivement dans la création de programmes et incarnant chacun une des phases du cycle de développement des systèmes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-film"></i> -->
+                                    <i class="fa fa-desktop"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">Développement web</h4>
+                                    <p class="tall">Le développement web est une discipline qui consiste, par l’usage de langages de programmation web, à programmer des sites web ou applications web (ou web mobile) destinés à être publiés sur des serveurs. Le métier de développeur web demande de savoir manier des outils tels que les CMS ou les frameworks (comme Bootstrap ou bien le framework Symfony par exemple).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-bars"></i> -->
+                                    <i class="fa fa-tablet"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">Développement mobile</h4>
+                                    <p class="tall">A l’ère du tout numérique, le développement des applications mobiles a connu une expansion grandissante ces dernières années, soutenu par l’explosion des nouvelles plateforme technologique ( tablette, montre connectée, smartphone…). Le développement mobile se définit par à la création et la diffusion d’applications portables, destinées aux entreprises ou aux particuliers, dans le respect d’une charte de fiabilité et de sécurité stricte.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <hr class="tall" />
+    
+            <div class="row">
+                <div class="col-sm-7">
+                    <h2> <strong>Maintenance</strong></h2>
+                    <p class="lead">
+                    La maintenance informatique consiste à assurer le bon fonctionnement d'un système d'information et d'un parc informatique d'une entreprise. Certaines sociétés de maintenance informatique réalisent leur prestation sur le site de l'entreprise ou à distance.
+                    </p>
+                    <!-- <p class="tall">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent scelerisque volutpat turpis, eu hendrerit enim scel.
+                    </p> -->
+                </div>
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/ingénierie3.jpg">
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12">
+                    <h2> les niveaux de maintenance informatique <strong></strong></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-group"></i> -->
+                                    <i class="fa fa-puzzle-piece"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">La maintenance informatique préventive</h4>
+                                    <p class="tall">La maintenance informatique préventive vise à réduire les risques de pannes auxquels sont soumis les équipements d'un parc informatique. Son rôle est d'éviter le maximum d'arrêts de fonctionnement ou de ralentissement des ordinateurs, logiciels et équipements réseau.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-film"></i> -->
+                                    <i class="fa fa-puzzle-piece"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">La maintenance informatique corrective</h4>
+                                    <p class="tall">La maintenance informatique corrective intervient après l'identification d'une panne ou d'un dysfonctionnement. Elle consiste à procéder à l'élimination du problème pour remettre en bon état de fonctionnement l'équipement informatique concerné au sein de la PME.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-bars"></i> -->
+                                    <i class="fa fa-puzzle-piece"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter">La maintenance informatique évolutive</h4>
+                                    <p class="tall">consiste à constamment maintenir son système informatique dans la modernité, afin de ne pas être dépasser par ses concurrents.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="tall" />
+    
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-1 push-top">
+                    <img class="img-responsive" src="img/ingénierie4.jpg">
+                </div>
+                <div class="col-sm-7">
+                    <h2> <strong>Gestion de projets</strong></h2>
+                    <p class="lead">
+                    La gestion de projet, est l'application de compétences, d'outils et de techniques aux activités du projet afin de répondre aux exigences du projet. C'est l'acte de gérer tous les aspects d'un projet, de l'équipe aux tâches et aux outils. Autrement dit La gestion de projet ou management de projet est l'ensemble des activités visant à organiser le bon déroulement d’un projet et à en atteindre les objectifs en temps et en heures selon les objectifs visés.
+                    </p>
+                    <!-- <p class="tall">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet hendrerit volutpat. Sed in nunc nec ligula consectetur mollis in vel justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent scelerisque volutpat turpis, eu hendrerit enim scel.
+                    </p> -->
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12">
+                    <h2> Nos méthodes de gestion <strong></strong></h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-group"></i> -->
+                                    <i class="fa fa-cubes"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter"><strong>LES MÉTHODES AGILES</strong></h4>
+                                    <p class="tall">Il s'agit d'une méthode de gestion de projet révolutionnaire caractérisée par une démarche itérative et incrémentale. En d'autres termes, les projets agiles sont construits lentement, étape par étape. Scrum et Safe sont les méthodes agiles les plus utilisées.</p>
+                                    <p>
+                                        <div class="row push-top">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="feature-box">
+                                                            <div class="feature-box-icon">
+                                                                <i class="fa fa-gavel"></i>
+                                                            </div>
+                                                            <div class="feature-box-info">
+                                                                <h5 class="shorter">Scrum</h5>
+                                                                <p class="tall">L'approche SCRUM est une méthode agile consacrée à la gestion de projet. Son objectif phare est d'améliorer la productivité des équipes, tout en permettant une optimisation du produit grâce à des feedbacks réguliers du marché.SCRUM pèse 54%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="feature-box">
+                                                            <div class="feature-box-icon">
+                                                                <i class="fa fa-gear"></i>
+                                                            </div>
+                                                            <div class="feature-box-info">
+                                                                <h5 class="shorter">SAFe</h5>
+                                                                <p class="tall">SAFe est le principal framework au monde pour faire évoluer l'Agilité à l'échelle de l'entreprise. Il permet d'instaurer au sein d'une même entreprise un langage commun et fluide entre les différentes équipes concernées par le développement d'un produit. SAFe pèse 30%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="feature-box secundary">
+                                <div class="feature-box-icon">
+                                    <!-- <i class="fa fa-film"></i> -->
+                                    <i class="fa fa-dot-circle-o"></i>
+                                </div>
+                                <div class="feature-box-info">
+                                    <h4 class="shorter"><strong>LES MÉTHODES TRADITIONNELLES DE GESTION DE PROJET</strong></h4>
+                                    <p class="tall">La maintenance informatique corrective intervient après l'identification d'une panne ou d'un dysfonctionnement. Elle consiste à procéder à l'élimination du problème pour remettre en bon état de fonctionnement l'équipement informatique concerné au sein de la PME.</p>
+                                    <p>
+                                        <div class="row push-top">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="feature-box">
+                                                            <div class="feature-box-icon">
+                                                                <i class="fa fa-edit"></i>
+                                                            </div>
+                                                            <div class="feature-box-info">
+                                                                <h5 class="shorter">méthode PERT</h5>
+                                                                <p class="tall">La méthode PERT se présente sous la forme d’un réseau présentant un commencement et une fin précis. Elle priorise les diverses étapes du projet et les activités à mener. Avec cette méthode, il est possible de cadrer le processus d’exécution d’un projet en agençant les travaux.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="feature-box">
+                                                            <div class="feature-box-icon">
+                                                                <i class="fa fa-exchange"></i>
+                                                            </div>
+                                                            <div class="feature-box-info">
+                                                                <h5 class="shorter">La méthode Cycle en V</h5>
+                                                                <p class="tall">C’est de la représentation graphique de cette méthode que découle le V dans son appellation. Cette représentation associe les différentes étapes de développement du projet à une phase de validation concordante.
+    
+    La méthode Cycle V est un modèle rigide qui convient aux produits dont les spécificités sont claires, immuables et de qualité standard. Elle permet d’assurer la correspondance des livrables aux exigences du client.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+      
+    
+                </div>
+        <!-- Ing End -->
+        
+
+<!-- Footer Start -->
+<div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3">
+                <p><i class="fa fa-map-marker-alt me-3"></i>Douala, Akwa, face Hôtel <br>Astoria</p>
+                <p><i class="fa fa-phone-alt me-3"></i>(237) 695 180 534</p>
+                <p><i class="fa fa-envelope me-3"></i>contact@comparablesa.com</p>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Plan du site</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="accueil.html">Accueil</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="about.html">A propos de nous</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="#">Services</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="portfolio.html">Portfolio</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="blog.html">Blog</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="contact.html">Contact</a></li>
+                </ul>
+                
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Services</h5>
+                <ul class="list icons list-unstyled">
+                    <li><i class="fa fa-caret-right"></i> <a href="ingénierie.html">Ingénierie</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="admin.html">Administration des serveurs</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="it.html">IT</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="programmation.html">Programmation</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="analyse.html">Analyse de données</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="web.html">Web design</a></li>
+                    <li><i class="fa fa-caret-right"></i> <a href="infographie.html">Infographie</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h5 class="text-white mb-4">Projet</h5>
+                <div class="row g-2">
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet1.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet2.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet3.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet4.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet5.jpg" alt="Image">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid" src="img/projet6.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Comparablesa</a>, All Right Reserved. 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+       <!-- Back to Top -->
+       <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
